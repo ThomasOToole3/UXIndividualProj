@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Daily Planner</title>
+    
+</head>
+<body>
+    <div class="banner-info" align="left">
+        <button onclick="showTaskInput()">Add Task</button>
+    </div>
+    
+    <!-- Hidden Task Input Section -->
+    <div id="taskInputSection" style="display: none;" class="banner-info" align="left">
+        <label>Enter Task</label>
+        <input type="text" class="text-center" placeholder="Enter Task" id="taskInput">
+    
+        <!-- Time buttons -->
+        <input type="button" onClick="insertData('taskInput', 'TableBody9')" value="9:00 a.m.">
+        <input type="button" onClick="insertData('taskInput', 'TableBody10')" value="10:00 a.m.">
+        <input type="button" onClick="insertData('taskInput', 'TableBody11')" value="11:00 a.m.">
+        <!-- Add more as needed -->
+    </div>
+    
+    <!-- 9:00 Task Block -->
+    <div class="banner-info" align="left">
+        <span><label>9:00 a.m.</label></span>
+        
+    </div>
+    <table id="table9">
+        <tbody id="TableBody9"></tbody>
+    </table>
+
+    <!-- 10:00 Task Block -->
+    <div class="banner-info" align="left">
+        <span><label>10:00 a.m.</label></span>
+        
+    </div>
+    <table id="table10">
+        <tbody id="TableBody10"></tbody>
+    </table>
+
+    <div class="banner-info" align="left">
+        <span><label>11:00 a.m.</label></span>
+       
+    </div>
+    <table id="table11">
+        <tbody id="TableBody11"></tbody>
+    </table>
+
+    <div class="banner-info" align="left">
+        <span><label>12:00 p.m.</label></span>
+        
+    </div>
+    <table id="table12">
+        <tbody id="TableBody12"></tbody>
+    </table>
+
+    <div class="banner-info" align="left">
+        <span><label>1:00 p.m.</label></span>
+       
+    </div>
+    <table id="table1">
+        <tbody id="TableBody1"></tbody>
+    </table>
+
+    <div class="banner-info" align="left">
+        <span><label>2:00 p.m.</label></span>
+      
+    </div>
+    <table id="table2">
+        <tbody id="TableBody2"></tbody>
+    </table>
+
+    <div class="banner-info" align="left">
+        <span><label>3:00 p.m.</label></span>
+     
+    </div>
+    <table id="table3">
+        <tbody id="TableBody3"></tbody>
+    </table>
+
+    <div class="banner-info" align="left">
+        <span><label>4:00 p.m.</label></span>
+       
+    </div>
+    <table id="table4">
+        <tbody id="TableBody4"></tbody>
+    </table>
+
+    <div class="banner-info" align="left">
+        <span><label>5:00 p.m.</label></span>
+      
+    </div>
+    <table id="table5">
+        <tbody id="TableBody5"></tbody>
+    </table>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,134 @@
+/* Global Reset */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fb; /* Light background color for the page */
+    color: #333; /* Dark text color for readability */
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between; /* Aligns the sections to the sides */
+    height: 100vh; /* Ensures full page height */
+    padding: 20px; /* Adds padding around the container */
+    box-sizing: border-box; /* Makes sure padding is included in total width/height */
+}
+
+/* Planner Section */
+.planner-section {
+    width: 60%;
+    padding: 20px;
+    background-color: #fff; /* White background for the planner section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for better focus */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+/* Calendar Section */
+.calendar-section {
+    width: 100%; /* Full width of the right section container */
+    padding: 20px;
+    background-color: #fff; /* White background for the calendar */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    margin-bottom: 20px; /* Spacing between calendar and event details */
+}
+
+/* Calendar Grid */
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Creates a 7-column grid for days of the week */
+    gap: 10px; /* Increased gap for better spacing */
+}
+
+.calendar-day {
+    padding: 15px;
+    text-align: center;
+    background-color: #f1f1f1; /* Light background for each day */
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.calendar-day:hover {
+    background-color: #f0a500; /* Hover effect with a soft yellow */
+    color: #fff; /* Changes text color when hovered */
+}
+
+/* Banner Info (for Task Input section) */
+.banner-info {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Blue button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Right Section: Calendar & Event Details */
+.right-section {
+    display: flex;
+    flex-direction: column; /* Stacks the calendar and event description vertically */
+    align-items: flex-start; /* Aligns them to the left side */
+    width: 40%;
+    padding: 20px;
+}
+
+/* Event Description Section */
+.event-description {
+    width: 100%; /* Takes the full width of the right section */
+    padding: 20px;
+    background-color: #fff;
+    border-top: 2px solid #ddd; /* More prominent separator */
+    margin-top: 20px; /* Adds space between calendar and event description */
+    box-sizing: border-box;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    font-size: 16px; /* Adjusted font size for readability */
+}
+
+/* Table Styling (for task times) */
+table {
+    margin-bottom: 40px;
+    width: 100%;
+    border-collapse: collapse; /* Cleaner look without borders between cells */
+}
+
+td {
+    padding: 15px; /* More padding for better readability */
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Subtle separation between rows */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Stack the sections vertically on small screens */
+        height: auto; /* Allow natural height */
+    }
+
+    .planner-section, .right-section {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Add spacing between the sections */
+    }
+}
+
+#currentDateTime {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+
