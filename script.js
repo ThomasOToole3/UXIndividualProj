@@ -1,9 +1,9 @@
-// Show the hidden task input section
+
 function showTaskInput() {
     document.getElementById("taskInputSection").style.display = "block";
 }
 
-// Insert a task into the table and save to localStorage
+
 function insertData(inputId, tableBodyId) {
     const input = document.getElementById(inputId);
     const task = input.value.trim();
@@ -14,7 +14,7 @@ function insertData(inputId, tableBodyId) {
     input.value = "";
 }
 
-// Add a row to the specified table with a delete button
+
 function addTaskToTable(tableBodyId, task) {
     const tableBody = document.getElementById(tableBodyId);
     const row = tableBody.insertRow();
@@ -24,39 +24,39 @@ function addTaskToTable(tableBodyId, task) {
     cell1.textContent = task;
     cell2.innerHTML = `<button onclick="deleteRow(this, '${tableBodyId}', '${task}')">Delete</button>`;
 
-    // Add a click event to the task cell (to show task details)
+    
     cell1.addEventListener("click", function () {
-        populateEventDetails(task);  // Populate the event details div with the task information
+        populateEventDetails(task);  
     });
 }
 
-// Save a task to localStorage
+
 function saveTask(tableBodyId, task) {
     const stored = JSON.parse(localStorage.getItem(tableBodyId)) || [];
     stored.push(task);
     localStorage.setItem(tableBodyId, JSON.stringify(stored));
 
-    // Save for today's date
+    
     const today = new Date();
     const key = `tasks-${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
     const dailyTasks = JSON.parse(localStorage.getItem(key)) || [];
     dailyTasks.push(task);
     localStorage.setItem(key, JSON.stringify(dailyTasks));
 
-    generateCalendar(); // update calendar after saving
+    generateCalendar(); 
 }
 
-// Delete a row from the table and remove from localStorage
+
 function deleteRow(button, tableBodyId, task) {
-    // Remove row from the table
+   
     button.closest('tr').remove();
 
-    // Remove task from localStorage
+   
     let tasks = JSON.parse(localStorage.getItem(tableBodyId)) || [];
     tasks = tasks.filter(t => t !== task);
     localStorage.setItem(tableBodyId, JSON.stringify(tasks));
 
-    // Remove from today's tasks as well
+    
     const today = new Date();
     const key = `tasks-${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
     let dailyTasks = JSON.parse(localStorage.getItem(key)) || [];
