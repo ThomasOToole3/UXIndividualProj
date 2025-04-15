@@ -63,10 +63,10 @@ function deleteRow(button, tableBodyId, task) {
     dailyTasks = dailyTasks.filter(t => t !== task);
     localStorage.setItem(key, JSON.stringify(dailyTasks));
 
-    generateCalendar(); // update calendar after deleting
+    generateCalendar(); 
 }
 
-// Load saved tasks from localStorage on page load
+
 function loadTasks() {
     const allTableIds = [
         "TableBody9", "TableBody10", "TableBody11", "TableBody12",
@@ -81,7 +81,7 @@ function loadTasks() {
     });
 }
 
-// Generate the calendar
+
 function generateCalendar() {
     const calendar = document.getElementById("calendar");
     const date = new Date();
@@ -92,15 +92,15 @@ function generateCalendar() {
     const firstDay = new Date(year, month, 1).getDay();
     const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-    calendar.innerHTML = ''; // Clear previous content
+    calendar.innerHTML = ''; 
 
-    // Fill in blanks before first day
+    
     for (let i = 0; i < firstDay; i++) {
         const blank = document.createElement("div");
         calendar.appendChild(blank);
     }
 
-    // Add days
+    
     for (let day = 1; day <= daysInMonth; day++) {
         const dayDiv = document.createElement("div");
         dayDiv.className = "calendar-day";
@@ -108,18 +108,17 @@ function generateCalendar() {
 
         const taskKey = `tasks-${year}-${month + 1}-${day}`;
         if (localStorage.getItem(taskKey)) {
-            dayDiv.classList.add("task-day"); // Highlight day if it has tasks
+            dayDiv.classList.add("task-day"); 
         }
 
         calendar.appendChild(dayDiv);
     }
 }
 
-// Populate event details when a task is clicked
 function populateEventDetails(task) {
     const eventDetailsDiv = document.querySelector(".event-description");
 
-    // Add task details to the event description div (you can expand this for more info)
+    
     eventDetailsDiv.innerHTML = `
         <h3>Event Details</h3>
         <p><strong>Task:</strong> ${task}</p>
@@ -127,19 +126,19 @@ function populateEventDetails(task) {
     `;
 }
 
-// Update calendar on load
+
 window.onload = function () {
     generateCalendar();
-    loadTasks(); // Load existing tasks from localStorage
+    loadTasks();
 };
 
 function updateDateTime() {
     const now = new Date();
-    const formatted = now.toLocaleString(); // includes date and time
+    const formatted = now.toLocaleString(); 
     document.getElementById("currentDateTime").textContent = `Current Date & Time: ${formatted}`;
 }
 
-// Call it immediately and then update every second
+
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
